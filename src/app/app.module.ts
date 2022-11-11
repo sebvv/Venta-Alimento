@@ -25,7 +25,6 @@ const routes = [
     BrowserModule, 
     RouterModule.forRoot(routes),
     ComponentsModule, 
-    PagesModule,
     MatSidenavModule,
     MatListModule
   ],

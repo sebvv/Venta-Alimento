@@ -5,6 +5,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material.module'; 
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports: [
     FooterComponent,
