@@ -1,6 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { Home } from './home/home.component';
+
+/* componentes */
+import { HomeComponent } from './home/home.component';
+import { ProductosComponent } from './productos/productos.component';
+import { PagesComponent } from './pages.component';
 
 
 
@@ -8,10 +12,18 @@ const routes: Routes = [
     
     {
         path: 'home',
-        component: Home,
+        component: PagesComponent,
         //canActivate: [AuthGuard], /* implementar guards para proteger las rutas */
         children: [
-            { path: '', component: Home, data: { breadcrumb: 'home' } }
+            { path: '', component: HomeComponent, data: { breadcrumb: 'home' } }
+        ]
+    },
+    {
+        path: 'productos',
+        component: PagesComponent,
+        //canActivate: [AuthGuard], /* implementar guards para proteger las rutas */
+        children: [
+            { path: '', component: ProductosComponent, data: { breadcrumb: 'Productos' } }
         ]
     }
 
@@ -23,4 +35,5 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
+
 export class PagesRoutingModule {}

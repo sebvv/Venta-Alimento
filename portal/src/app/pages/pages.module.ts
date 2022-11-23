@@ -7,27 +7,26 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* Módulos */
 import { SharedModule } from '../shared/shared.module';
+import { ProductosModule } from './productos/productos.module';
 
 /* Componentes */
 import { PagesComponent } from './pages.component';
-
-
+import { HomeComponent } from './home/home.component';
+import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
     declarations: [
-        PagesComponent
+        PagesComponent,
+        HomeComponent
     ],
     imports: [
-      CommonModule,
-      RouterModule,
-      SharedModule,
-      ReactiveFormsModule,
-      HttpClientModule,
-    ],
-    exports:[
+        CommonModule,
+        RouterModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        SharedModule,
+        ProductosModule,
+        ComponentsModule
     ]
-  })
-  export class PagesModule { 
-    
-  }
-  
+})
+export class PagesModule { }

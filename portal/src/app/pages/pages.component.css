@@ -1,0 +1,19 @@
+:host { 
+    display: contents; 
+  }
+  .home-container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    align-items: center;
+    padding-top: 70px;
+    flex-direction: column;
+  }
+
+@media(max-width: 479px) {
+    
+    .home-container {
+      padding-top: 55px;
+    }
+}

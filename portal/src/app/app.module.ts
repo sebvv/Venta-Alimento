@@ -1,19 +1,18 @@
-import { NgModule } from '@angular/core'
-import { RouterModule } from '@angular/router'
+import { LOCALE_ID, NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser'
-
-import { ComponentsModule } from './components/components.module'
-import { AppComponent } from './app.component';
-import { PagesModule } from './pages/pages.module';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+/* Componentes */
 import { NopageFoundComponent } from './nopage-found/nopage-found.component';
+import { AppComponent } from './app.component';
+
+/* Module */
+import { ComponentsModule } from './components/components.module'
+import { MatListModule} from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
-
-
-const routes = [
-  
-]
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './material.module'
+import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -21,15 +20,17 @@ const routes = [
     NopageFoundComponent
   ],
   imports: [
+    BrowserModule,
+    RouterModule,
     AppRoutingModule,
-    BrowserModule, 
-    RouterModule.forRoot(routes),
-    ComponentsModule, 
-    MatSidenavModule,
-    PagesModule,
-    MatListModule
+    ComponentsModule,
+    HttpClientModule,
+    MaterialModule,
+    MatListModule,
+    SharedModule,
+    PagesModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [{provide: LOCALE_ID, useValue: 'es-CL'}],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
