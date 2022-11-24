@@ -1,69 +1,67 @@
-<div class="home-main">
-    <div class="home-hero section-container">
-      <div class="home-max-width max-width-container">
-        <div class="home-hero1">
-          <mat-card>
-            <h3 ngClass="Title">Mantenedor de proveedor</h3>
-            <section>
-                <div class="row">
+<
+<mat-card style="width: 100%; padding-top:100px;">
+    <h3 ngClass="Title">Mantenedor de Productos</h3>
+    <section>
+        <div class="row">
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" (click)="listar()">Consultar</button>&nbsp;
+                    <button mat-raised-button color="warn" (click)="openDialogAdd()">Agregar Productos</button>
                 </div>
-                <div class="row">&nbsp;</div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="example-button-row">
-                            <button mat-raised-button color="primary" >Consultar</button>&nbsp;
-                            <button mat-raised-button color="warn">Add Proveedor</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </mat-card>
-        <mat-divider></mat-divider>
-        
-        <!-- <mat-card>
-            <mat-form-field appearance="standard">
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-            </mat-form-field> -->
-        
-            <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                <ng-container matColumnDef="codigo">
-                    <th mat-header-cell *matHeaderCellDef>codigo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
-                </ng-container>
-        
-                <ng-container matColumnDef="titulo">
-                    <th mat-header-cell *matHeaderCellDef> titulo</th>
-                    <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
-                </ng-container>
-  
-                <ng-container matColumnDef="descripcion">
-                  <th mat-header-cell *matHeaderCellDef> descripcion</th>
-                  <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-              </ng-container>
-        
-                
-        
-                <ng-container matColumnDef="acciones">
-                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
-                    <td mat-cell *matCellDef="let element"> {{element.habilitado}} 
-                        <a>
-                            <mat-icon aria-hidden="false">edit</mat-icon>
-                          </a>
-                          <a>
-                            <mat-icon aria-hidden="false">delete</mat-icon>
-                          </a>  
-                    </td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table> -->
-         <!--    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
-                aria-label="Select page of periodic elements">
-            </mat-paginator>
-        </mat-card> -->
-        
-      </div>
-    </div>
-  </div>
-  
+            </div>
+        </div>
+    </section>
+</mat-card>
+    
+<mat-card style="width: 100%;">
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef>codigo </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef>titulo </th>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="img">
+            <th mat-header-cell *matHeaderCellDef>img </th>
+            <td mat-cell *matCellDef="let element"> {{element.img}} </td>
+        </ng-container>
+        <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef>descripcion </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="detalleProducto">
+            <th mat-header-cell *matHeaderCellDef>detalleProducto </th>
+            <td mat-cell *matCellDef="let element"> {{element.detalleProducto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cantidad">
+            <th mat-header-cell *matHeaderCellDef> cantidad</th>
+            <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+        </ng-container>
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> valor</th>
+            <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tipoArticuloCodigo">
+            <th mat-header-cell *matHeaderCellDef> tipoArticuloCodigo</th>
+            <td mat-cell *matCellDef="let element"> {{element.tipoArticuloCodigo}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</mat-card>

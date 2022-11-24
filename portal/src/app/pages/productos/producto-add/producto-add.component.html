@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Nuevo Producto</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+      
+      <input hidden="true" matInput class="form-control" formControlName="codigo">
+      <mat-form-field appearance="outline">
+        <mat-label>codigo</mat-label>
+        <input formControlName="codigo" matInput placeholder="codigo">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>titulo</mat-label>
+        <input formControlName="titulo" matInput placeholder="titulo">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>img</mat-label>
+        <input formControlName="img" matInput placeholder="img">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>descripcion</mat-label>
+        <input formControlName="descripcion" matInput placeholder="descripcion">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>detalleProducto</mat-label>
+        <input formControlName="detalleProducto" matInput placeholder="detalleProducto">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>cantidad</mat-label>
+        <input formControlName="cantidad" matInput placeholder="cantidad">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>valor</mat-label>
+        <input formControlName="valor" matInput placeholder="valor">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>tipo Articulo</mat-label>
+        <input formControlName="tipoArticulo" matInput placeholder="tipo Articulo">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </form>
+
+      <div mat-dialog-action [align]="'end'">
+          <button mat-raised-button mat-dialog-close color="warn" mat-dialog-close (click)="close()">Cancelar</button>
+          <button style="margin-left: 6px;" mat-raised-button color="primary" (click)="addProducto()">Grabar</button>
+      </div>
+</div>
